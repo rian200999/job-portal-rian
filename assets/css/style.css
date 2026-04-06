@@ -1,0 +1,61 @@
+:root {
+    /* PALET WARNA HIJAU */
+    --tp-darkest: #011E17;     /* Ijo sangat tua (Background) */
+    --tp-dark: #022C22;        /* Ijo Tua (Card/Elevated) */
+    --tp-green: #059669;       /* Ijo Medium (Primary Button/Accent) */
+    --tp-light: #34D399;       /* Ijo Muda (Highlight/Glow) */
+    
+    --tp-text-main: #ECFDF5;   /* Putih kehijauan */
+    --tp-text-muted: #A7F3D0;  /* Ijo pudar untuk teks sekunder */
+    --tp-border: rgba(52, 211, 153, 0.15); /* Border ijo transparan */
+    
+    --tp-transition: all 0.3s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--tp-darkest);
+    color: var(--tp-text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a { text-decoration: none; transition: var(--tp-transition); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* HEADER STYLING */
+.header {
+    position: fixed; top: 0; left: 0; width: 100%;
+    padding: 20px 0;
+    background: rgba(1, 30, 23, 0.85); /* Ijo transparan */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--tp-border);
+    z-index: 1000;
+}
+
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+
+.logo { font-size: 24px; font-weight: 800; color: var(--tp-text-main); }
+.logo span { color: var(--tp-light); }
+
+.navbar { display: flex; align-items: center; gap: 32px; }
+.nav-link { font-size: 15px; font-weight: 500; color: var(--tp-text-muted); }
+.nav-link:hover, .nav-link.active { color: var(--tp-light); }
+
+.btn-cta-nav {
+    padding: 10px 24px;
+    background: var(--tp-green);
+    color: #fff !important;
+    border-radius: 8px; font-weight: 600; font-size: 14px;
+}
+.btn-cta-nav:hover { background: var(--tp-light); color: var(--tp-darkest) !important; }
+
+.menu-icon { display: none; font-size: 28px; color: var(--tp-text-main); cursor: pointer; }
+
+@media (max-width: 768px) {
+    .navbar { display: none; }
+    .menu-icon { display: block; }
+}
