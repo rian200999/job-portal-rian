@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Hub - Japan Tech Career</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/gateway.css">
+    <link rel="stylesheet" href="assets/css/gateway-v2.css">
+    <link rel="stylesheet" href="assets/css/gateway-v3.css">
+    <link rel="stylesheet" href="assets/css/gateway-v4.css">
+    <link rel="stylesheet" href="assets/css/gateway-v5.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body class="bg-light-jtc">
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Karir<span>Jepang.</span></a>
+            <nav class="navbar">
+                <a href="list-job.html" class="nav-link active">Cari Kerja</a>
+                <a href="#komunitas" class="nav-link">Komunitas</a>
+                <a href="#perusahaan" class="nav-link">Perusahaan</a>
+                <a href="#" class="btn-cta-nav">Buat Profil</a>
+            </nav>
+            <div class="menu-icon" id="menu-btn">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="tp-gateway-main">
+        <div class="container">
+            <div class="discovery-header" data-aos="fade-up">
+                <p>Contoh 1 - LENDRA SELASA RABU KAMIS</p><br>
+                <span class="jp-badge">リアルタイム情報</span>
+                <h2>Discovery <span>Hub</span></h2>
+                <p>Intip peluang karirmu di Jepang secara langsung melalui dashboard interaktif JTC.</p>
+            </div>
+
+            <div class="bento-dashboard">
+
+                <div class="dash-card job-ticker" data-aos="zoom-in">
+                    <div class="card-head">
+                        <h5><i class='bx bx-broadcast'></i> Hiring Now</h5>
+                        <span class="pulse-dot"></span>
+                    </div>
+                    <div class="ticker-content" id="tickerContent">
+                        <div class="ticker-item">
+                            <strong>Mobile Dev</strong> <span>Rakuten • Tokyo</span>
+                        </div>
+                        <div class="ticker-item">
+                            <strong>DevOps</strong> <span>Sony • Osaka</span>
+                        </div>
+                        <div class="ticker-item">
+                            <strong>Frontend</strong> <span>Mercari • Kyoto</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="dash-card salary-widget" data-aos="zoom-in" data-aos-delay="100">
+                    <h5>Estimasi Gaji Dev</h5>
+                    <div class="salary-display">
+                        <span class="currency">¥</span>
+                        <h3 id="salaryCounter">4.5</h3>
+                        <span class="unit">M/Thn</span>
+                    </div>
+                    <input type="range" min="3" max="12" value="4.5" step="0.5" class="salary-slider" id="salarySlider">
+                    <p class="slider-note">Geser untuk estimasi role Senior</p>
+                </div>
+
+                <div class="dash-card gateway-cta" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="cta-inner">
+                        <div class="kanji-watermark">夢</div>
+                        <h4>Mulai Karir Tech <br>di Jepang Hari Ini</h4>
+                        <p>Akses 500+ loker backend, frontend, dan infra yang siap menanti skill-mu.</p>
+                        <a href="list-job.html" class="btn-primary-jtc">Buka Portal Kerja <i
+                                class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+                </div>
+
+                <div class="dash-card lang-widget" data-aos="zoom-in" data-aos-delay="300">
+                    <h5>Syarat Bahasa</h5>
+                    <div class="lang-chips">
+                        <span class="l-chip active" data-job="80%">N3</span>
+                        <span class="l-chip" data-job="40%">N4</span>
+                        <span class="l-chip" data-job="15%">N2</span>
+                    </div>
+                    <div class="match-bar">
+                        <div class="bar-fill" id="matchBar" style="width: 80%;"></div>
+                    </div>
+                    <p id="matchText">80% Loker tersedia untuk N3</p>
+                </div>
+
+                <div class="dash-card stats-mini" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-circle">
+                        <svg viewBox="0 0 36 36" class="circular-chart">
+                            <path class="circle-bg"
+                                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                            <path class="circle" stroke-dasharray="75, 100"
+                                d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                        </svg>
+                        <div class="percentage">75%</div>
+                    </div>
+                    <h6>Visa Support</h6>
+                    <p>Loker dengan dukungan relokasi penuh.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <main class="tp-gateway-v2">
+        <div class="container">
+            <div class="gateway-header" data-aos="fade-up">
+                <p class="example-label">Contoh 2 - LENDRA KEJORA KEJEDOT MANTAN</p>
+                <div class="title-with-jp">
+                    <h2>Peluang Karir <span>Terbaru</span></h2>
+                    <span class="jp-text-fade">求人情報</span>
+                </div>
+                <p>Lihat lowongan yang paling banyak dicari minggu ini. Data diperbarui secara real-time.</p>
+            </div>
+
+            <div class="hub-grid">
+
+                <div class="hub-sidebar" data-aos="fade-right">
+                    <div class="stat-mini-card">
+                        <div class="icon-wrap"><i class='bx bxs-briefcase'></i></div>
+                        <div class="stat-info">
+                            <h4 id="count-jobs">500+</h4>
+                            <p>Loker Aktif</p>
+                        </div>
+                    </div>
+
+                    <div class="category-nav">
+                        <h5>Kategori Populer:</h5>
+                        <button class="cat-btn active" data-filter="backend">Backend Dev</button>
+                        <button class="cat-btn" data-filter="frontend">Frontend Dev</button>
+                        <button class="cat-btn" data-filter="mobile">Mobile App</button>
+                        <button class="cat-btn" data-filter="infra">Infrastructure</button>
+                    </div>
+
+                    <div class="matching-teaser">
+                        <i class='bx bx-party'></i>
+                        <p>Sudah punya CV? Cek kecocokanmu dengan AI kami.</p>
+                        <a href="#">Mulai Job Matching</a>
+                    </div>
+                </div>
+
+                <div class="hub-main" data-aos="fade-left">
+                    <div class="feed-header">
+                        <span class="live-indicator">
+                            <span class="dot"></span> LIVE UPDATE
+                        </span>
+                        <a href="list-job.html" class="view-all">Lihat Semua <i class='bx bx-right-arrow-alt'></i></a>
+                    </div>
+
+                    <div class="job-preview-list" id="jobPreviewList">
+                        <div class="preview-card loading">Memuat lowongan...</div>
+                    </div>
+
+                    <div class="hub-cta-footer">
+                        <p>Tertarik dengan salah satu posisi di atas?</p>
+                        <a href="list-job.html" class="btn-gateway-sakura">Buka Portal Lowongan Penuh</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <main class="tp-gateway-v3">
+        <div class="container">
+            <div class="roadmap-header" data-aos="fade-down">
+                <p class="example-label">Contoh 3 - LENDRA KEJORA KEJEDOT MANTAN</p>
+                <h2>Jalur Cepat <span>Karir Jepang</span></h2>
+                <p>Ikuti rute yang telah kami siapkan untuk membantumu sampai ke perusahaan impian.</p>
+            </div>
+
+            <div class="roadmap-grid">
+
+                <div class="railway-steps" data-aos="fade-right">
+                    <div class="step-item active">
+                        <div class="step-number">01</div>
+                        <div class="step-info">
+                            <h6>Persiapan Dokumen</h6>
+                            <p>Optimasi Resume & CV standar Jepang (ATS).</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">02</div>
+                        <div class="step-info">
+                            <h6>AI Job Matching</h6>
+                            <p>Sistem kami mencarikan "gerbong" yang tepat buatmu.</p>
+                        </div>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-number">03</div>
+                        <div class="step-info">
+                            <h6>Interview & COE</h6>
+                            <p>Wawancara langsung dan pengurusan Visa/COE.</p>
+                        </div>
+                    </div>
+                    <div class="rail-line"></div>
+                </div>
+
+                <div class="departure-board" data-aos="fade-left">
+                    <div class="board-header">
+                        <div class="board-title">
+                            <i class='bx bxs-train'></i>
+                            <h5>Job Departure Board</h5>
+                        </div>
+                        <div class="board-tabs">
+                            <button class="plat-btn active" data-platform="tech">Platform 1 (Tech)</button>
+                            <button class="plat-btn" data-platform="non-tech">Platform 2 (Others)</button>
+                        </div>
+                    </div>
+
+                    <div class="board-table">
+                        <div class="table-head">
+                            <span>Time</span>
+                            <span>Position / Company</span>
+                            <span>Destination</span>
+                            <span>Status</span>
+                        </div>
+                        <div class="table-body" id="departureList">
+                        </div>
+                    </div>
+
+                    <div class="board-footer">
+                        <p>Tiket karirmu sudah siap?</p>
+                        <a href="list-job.html" class="btn-shinkansen">Pesan Kursi Sekarang (Apply)</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- <main class="tp-gateway-v4">
+        <div class="container">
+            <div class="radar-header" data-aos="fade-up">
+                <p class="example-label">Contoh 4 - SKILL RADAR COMPASS</p>
+                <h2>Arahkan <span>Kompas Karirmu</span></h2>
+                <p>Cek profil *skill* yang dibutuhkan industri tech Jepang dan temukan perusahaan yang paling cocok buatmu.</p>
+            </div>
+
+            <div class="radar-hub-wrapper">
+                
+                <div class="radar-nav" data-aos="fade-right">
+                    <h5>Pilih Fokus Karir:</h5>
+                    <div class="nav-pills-v4">
+                        <button class="v4-pill active" data-role="backend">
+                            <i class='bx bx-data'></i> Backend
+                        </button>
+                        <button class="v4-pill" data-role="frontend">
+                            <i class='bx bx-layout'></i> Frontend
+                        </button>
+                        <button class="v4-pill" data-role="mobile">
+                            <i class='bx bx-mobile-vibration'></i> Mobile
+                        </div>
+                        <button class="v4-pill" data-role="devops">
+                            <i class='bx bx-infinite'></i> DevOps
+                        </button>
+                    </div>
+                </div>
+
+                <div class="radar-visual" data-aos="zoom-in">
+                    <div class="radar-container">
+                        <svg viewBox="0 0 200 200" class="radar-svg">
+                            <circle cx="100" cy="100" r="80" class="r-grid" />
+                            <circle cx="100" cy="100" r="60" class="r-grid" />
+                            <circle cx="100" cy="100" r="40" class="r-grid" />
+                            <circle cx="100" cy="100" r="20" class="r-grid" />
+                            
+                            <line x1="100" y1="20" x2="100" y2="180" class="r-axis" />
+                            <line x1="20" y1="100" x2="180" y2="100" class="r-axis" />
+                            <line x1="43.4" y1="43.4" x2="156.6" y2="156.6" class="r-axis" />
+                            <line x1="43.4" y1="156.6" x2="156.6" y2="43.4" class="r-axis" />
+                            
+                            <polygon id="skillPolygon" points="100,40 160,100 100,160 40,100" class="r-poly" />
+                        </svg>
+                        
+                        <span class="l-skill s-top">Algorithm</span>
+                        <span class="l-skill s-right">Teamwork</span>
+                        <span class="l-skill s-bottom">Language</span>
+                        <span class="l-skill s-left">Framework</span>
+                    </div>
+                </div>
+
+                <div class="radar-match-card" data-aos="fade-left">
+                    <div class="match-label">Best Match Partner</div>
+                    <div id="matchCompany">
+                        <img src="https://ui-avatars.com/api/?name=Sony&background=000&color=fff" alt="Company">
+                        <h4>Sony Interactive Ent.</h4>
+                        <p>Tokyo, Japan</p>
+                    </div>
+                    <hr>
+                    <div class="match-desc">
+                        <p id="matchText">Sangat cocok untuk Backend Engineer dengan fokus pada sistem terdistribusi & mikroservis.</p>
+                    </div>
+                    <a href="list-job.html" class="btn-radar-apply">Lihat Lowongan <i class='bx bx-right-arrow-alt'></i></a>
+                </div>
+
+            </div>
+        </div>
+    </main> -->
+
+    <main class="tp-gateway-v5-revised">
+        <div class="container">
+            
+            <div class="gateway-card-wrapper" data-aos="fade-up">
+                <div class="gateway-info">
+                    <p>Contoh 4 - LENDRA SELASA RABU KAMIS</p>
+                    <div class="jp-tag-badge">求人ポータル</div>
+                    <h2>Akses Portal <br><span>Lowongan JTC</span></h2>
+                    <p>Cari, filter, dan lamar pekerjaan impianmu di Jepang dalam satu platform terintegrasi.</p>
+                    
+                    <div class="mini-stats-grid">
+                        <div class="m-stat">
+                            <h4 id="jobs-count">500+</h4>
+                            <span>Loker Aktif</span>
+                        </div>
+                        <div class="m-stat">
+                            <h4 id="comp-count">120+</h4>
+                            <span>Perusahaan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gateway-action-hub">
+                    <div class="search-teaser-box">
+                        <div class="fake-input">
+                            <i class='bx bx-search'></i>
+                            <span id="typing-text"></span>
+                            <span class="cursor">|</span>
+                        </div>
+                        
+                        <div class="quick-prefektur">
+                            <span>Populer:</span>
+                            <a href="list-job.html">Tokyo</a>
+                            <a href="list-job.html">Osaka</a>
+                            <a href="list-job.html">Kyoto</a>
+                            <a href="list-job.html">Fukuoka</a>
+                        </div>
+
+                        <a href="list-job.html" class="btn-portal-full">
+                            Masuk ke Job Portal <i class='bx bx-right-arrow-alt'></i>
+                        </a>
+                    </div>
+
+                    <div class="job-float-tags">
+                        <div class="f-tag"><i class='bx bxl-go-lang'></i> Go Dev</div>
+                        <div class="f-tag"><i class='bx bxl-react'></i> React JS</div>
+                        <div class="f-tag"><i class='bx bxl-aws'></i> DevOps</div>
+                        <div class="f-tag"><i class='bx bxs-user-voice'></i> N3 Level</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <script src="assets/js/gateway-v2.js"></script>
+    <script src="assets/js/gateway-v3.js"></script>
+    <script src="assets/js/gateway-v4.js"></script>
+    <script src="assets/js/gateway-v5.js"></script>
+
+</body>
+
+</html>
