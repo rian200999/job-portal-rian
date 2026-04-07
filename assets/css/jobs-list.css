@@ -1,0 +1,737 @@
+/* ==========================================================================
+   REVISED HEADER: COMPACT, CENTERED & INTERACTIVE
+   ========================================================================== */
+.tp-job-page-header {
+    background: linear-gradient(-45deg, #111827, #1d3557, #111827);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite; /* Animasi background halus */
+    padding: 120px 0 60px; /* Diperpendek lagi biar Job List kelihatan */
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 4px solid var(--tp-primary);
+    text-align: center;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Kanji Watermark - Ditaruh di pojok bawah biar gak nabrak teks */
+.huge-kanji-bg {
+    position: absolute !important;
+    bottom: -5px;
+    right: -5%;
+    font-size: 180px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+    line-height: 1;
+}
+
+.header-content-flex {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* Gap antar elemen diperkecil */
+}
+
+/* Title Styling */
+.page-title-area h1 {
+    font-size: 40px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 10px 0; /* Margin bawah dikecilin */
+    color: #ffffff;
+}
+
+.page-title-area h1 span {
+    color: var(--tp-primary);
+    position: relative;
+    display: inline-block;
+}
+
+.page-title-area p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin: 0 auto;
+    max-width: 550px;
+    opacity: 0.9;
+}
+
+/* --- SEARCH BAR INTERACTIVE --- */
+.search-floating-wrapper {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.global-search-box {
+    background: #ffffff;
+    padding: 8px;
+    border-radius: 16px;
+    display: flex;
+    gap: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+/* Efek pas Input di-klik (Focus-Within) */
+.global-search-box:focus-within {
+    transform: translateY(-3px);
+    border-color: var(--tp-primary);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.2);
+}
+
+.input-wrap {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 15px;
+}
+
+.input-wrap i { 
+    font-size: 22px; 
+    color: var(--tp-primary);
+    transition: 0.3s;
+}
+
+/* Icon Search goyang pas difokus */
+.global-search-box:focus-within .input-wrap i {
+    transform: scale(1.2);
+}
+
+.input-wrap input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--tp-text-main);
+    background: transparent;
+}
+
+.btn-search-primary {
+    background: var(--tp-primary);
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-search-primary:hover {
+    background: #d92e3d;
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.4);
+}
+
+.btn-search-primary i {
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.btn-search-primary:hover i {
+    transform: translateX(5px);
+}
+
+/* --- TRENDING KEYWORDS INTERACTIVE --- */
+.trending-keywords {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.trending-keywords span { 
+    font-size: 12px; 
+    color: #64748b; 
+    font-weight: 800; 
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trending-keywords a {
+    font-size: 12px;
+    color: #94a3b8;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 5px 15px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.trending-keywords a:hover {
+    color: #ffffff;
+    background: var(--tp-primary);
+    border-color: var(--tp-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(230, 57, 70, 0.2);
+}
+
+/* --- MOBILE FILTER BUTTON --- */
+.btn-mobile-filter {
+    display: none;
+    background: #f1f5f9;
+    color: var(--tp-text-main);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-mobile-filter:hover {
+    background: #e2e8f0;
+}
+
+@media (max-width: 992px) {
+    .btn-mobile-filter { display: flex; align-items: center; justify-content: center; }
+    .btn-search-primary .btn-text { display: none; }
+}
+
+/* --- MOBILE FILTER BUTTON FIX --- */
+.btn-mobile-filter {
+    display: none;
+    background: #f1f5f9;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    font-size: 20px;
+    color: var(--tp-text-main);
+}
+
+/* Responsivitas */
+@media (max-width: 992px) {
+    .btn-mobile-filter { display: flex; align-items: center; justify-content: center; }
+    .btn-search-primary .btn-text { display: none; }
+}
+
+/* --- GRID LAYOUT --- */
+.tp-job-list-section { padding: 80px 0; background: #F4F7F9; min-height: 100vh; }
+.job-layout-grid { display: grid; grid-template-columns: 280px 1fr; gap: 40px; }
+
+/* --- SIDEBAR FILTER --- */
+.filter-sidebar { background: #fff; padding: 30px; border-radius: 20px; border: 1px solid var(--tp-border); position: sticky; top: 100px; }
+.filter-group { margin-bottom: 30px; padding-bottom: 20px; border-bottom: 1px solid #edf2f7; }
+.filter-group:last-child { border: none; }
+.filter-title { font-size: 15px; font-weight: 800; color: var(--tp-text-main); margin-bottom: 15px; }
+
+/* Custom Checkbox */
+.filter-options { display: flex; flex-direction: column; gap: 12px; }
+.custom-cb { display: flex; align-items: center; gap: 12px; font-size: 14px; color: var(--tp-text-muted); cursor: pointer; }
+.custom-cb input { display: none; }
+.cb-box { width: 18px; height: 18px; border: 2px solid #CBD5E1; border-radius: 5px; transition: 0.3s; }
+.custom-cb input:checked + .cb-box { background: var(--tp-primary); border-color: var(--tp-primary); }
+
+/* JLPT Chips */
+.jlpt-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { background: #F1F5F9; border: 1px solid transparent; padding: 6px 14px; border-radius: 50px; font-size: 12px; font-weight: 700; color: var(--tp-text-muted); cursor: pointer; transition: 0.3s; }
+.chip.active { background: var(--tp-sakura-bg); color: var(--tp-primary); border-color: rgba(230, 57, 70, 0.2); }
+
+/* Salary Input */
+.salary-range { display: flex; align-items: center; gap: 10px; }
+.salary-input { width: 100%; border: 1px solid var(--tp-border); padding: 10px; border-radius: 8px; font-size: 13px; }
+
+/* --- MAIN CONTENT TOP --- */
+.results-top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.result-info { font-size: 16px; color: var(--tp-text-muted); }
+.result-info span { font-weight: 800; color: var(--tp-text-main); }
+
+.sorting-wrapper { display: flex; align-items: center; gap: 10px; }
+.sorting-wrapper select { padding: 10px; border-radius: 8px; border: 1px solid var(--tp-border); font-size: 14px; font-weight: 600; color: var(--tp-text-main); outline: none; }
+
+/* --- JOB CARDS LIST --- */
+.job-feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.job-card-list {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.job-card-list:hover {
+    transform: translateX(10px);
+    border-color: var(--tp-primary);
+    box-shadow: 0 15px 40px rgba(230, 57, 70, 0.08);
+}
+
+/* Aksen Garis Merah di Samping saat Hover */
+.job-card-list::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; height: 100%; width: 5px;
+    background: var(--tp-primary);
+    transform: scaleY(0);
+    transition: 0.3s;
+}
+.job-card-list:hover::after { transform: scaleY(1); }
+
+/* Logo Section */
+.card-left .comp-logo {
+    width: 70px; height: 70px;
+    background: #F8FAFC;
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    border: 1px solid #edf2f7;
+}
+.comp-logo img { width: 45px; height: 45px; object-fit: contain; }
+
+/* Middle Info Section */
+.card-mid { flex: 1; }
+
+.job-tags { display: flex; gap: 8px; margin-bottom: 12px; }
+.tag {
+    font-size: 11px; font-weight: 800; padding: 4px 12px; border-radius: 50px; text-transform: uppercase;
+}
+.tag.status { background: #E0F2FE; color: #0284C7; }
+.tag.jlpt { background: var(--tp-sakura-bg); color: var(--tp-primary); }
+
+.job-title { font-size: 20px; font-weight: 800; color: var(--tp-text-main); margin-bottom: 6px; }
+.comp-info { font-size: 14px; color: var(--tp-text-muted); font-weight: 600; margin-bottom: 12px; }
+.comp-info i { color: var(--tp-primary); }
+
+.job-desc { font-size: 14px; color: #64748B; line-height: 1.6; margin-bottom: 15px; max-width: 90%; }
+
+.job-perks { display: flex; gap: 20px; }
+.perk { font-size: 13px; font-weight: 700; color: var(--tp-text-main); display: flex; align-items: center; gap: 6px; }
+.perk i { color: #10B981; font-size: 18px; }
+
+/* Right Action Section */
+.btn-detail-jtc {
+    background: var(--tp-text-main);
+    color: #fff; text-decoration: none;
+    padding: 14px 24px; border-radius: 12px;
+    font-size: 14px; font-weight: 800;
+    white-space: nowrap; transition: 0.3s;
+    display: flex; align-items: center; gap: 8px;
+}
+.btn-detail-jtc:hover { background: var(--tp-primary); box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25); }
+.btn-detail-jtc:hover i { transform: translateX(5px); }
+
+/* --- EMPTY STATE --- */
+.empty-state-wrap {
+    background: #fff; border-radius: 30px; padding: 80px 40px; text-align: center;
+    border: 2px dashed #E2E8F0;
+}
+.empty-icon-box { position: relative; width: 100px; height: 100px; margin: 0 auto 30px; }
+.empty-icon-box i { font-size: 60px; color: #CBD5E1; position: relative; z-index: 2; }
+.empty-circle { 
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 80px; height: 80px; background: #F1F5F9; border-radius: 50%; 
+}
+
+.empty-state-wrap h3 { font-size: 24px; font-weight: 800; color: var(--tp-text-main); margin-bottom: 10px; }
+.empty-state-wrap p { color: var(--tp-text-muted); max-width: 400px; margin: 0 auto 35px; line-height: 1.6; }
+
+.empty-actions { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.or-text { font-weight: 700; color: #94A3B8; font-size: 14px; }
+
+.btn-reset-filter {
+    background: transparent; border: 2px solid var(--tp-border); color: var(--tp-text-main);
+    padding: 12px 25px; border-radius: 12px; font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.btn-reset-filter:hover { border-color: var(--tp-text-main); background: #F8FAFC; }
+
+.btn-upload-cv-alt {
+    background: var(--tp-primary); color: #fff; text-decoration: none;
+    padding: 14px 30px; border-radius: 12px; font-weight: 800; transition: 0.3s;
+}
+
+/* --- PAGINATION --- */
+.pagination-wrapper {
+    margin-top: 50px; display: flex; justify-content: center; align-items: center; gap: 15px;
+}
+.pg-btn, .pg-num {
+    width: 45px; height: 45px; border-radius: 12px; border: 1px solid var(--tp-border);
+    background: #fff; color: var(--tp-text-main); font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.pg-num.active { background: var(--tp-primary); border-color: var(--tp-primary); color: #fff; }
+.pg-num:hover:not(.active) { background: var(--tp-sakura-bg); color: var(--tp-primary); border-color: rgba(230,57,70,0.2); }
+.pg-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .job-card-list { flex-direction: column; align-items: flex-start; text-align: left; }
+    .card-right { width: 100%; }
+    .btn-detail-jtc { justify-content: center; width: 100%; }
+    .empty-actions { flex-direction: column; }
+}
+
+/* ==========================================================================
+   DARK SIDEBAR FILTER (PREMIUM EDITION)
+   ========================================================================== */
+.filter-sidebar {
+    background: #111827; /* Deep Dark Navy */
+    border-radius: 24px;
+    padding: 35px 25px;
+    position: sticky;
+    top: 100px;
+    height: fit-content;
+    color: #ffffff;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- SEARCH INPUT INSIDE SIDEBAR (OPSIONAL) --- */
+.filter-group {
+    margin-bottom: 35px;
+}
+
+.filter-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #94A3B8; /* Slate Light */
+    margin-bottom: 20px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* --- MINIMALIST CHECKBOX (HANYA ICON) --- */
+.filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.custom-cb {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #CBD5E1;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.custom-cb:hover {
+    background: rgba(255, 255, 255, 0.03);
+    color: #ffffff;
+}
+
+.custom-cb input { display: none; }
+
+/* Box Checkbox Minimalis */
+.cb-box {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    color: transparent; /* Sembunyiin icon pas ga dicek */
+    font-size: 20px;
+}
+
+.custom-cb input:checked + .cb-box {
+    color: var(--tp-primary); /* Hanya icon centang yang muncul warna merah */
+    transform: scale(1.2);
+}
+
+.custom-cb input:checked + .cb-box::after {
+    content: '\eb7a'; /* Icon check Boxicons */
+    font-family: 'boxicons';
+}
+
+/* --- JLPT CHIPS (DARK THEME) --- */
+.jlpt-chips {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.jlpt-chips .chip {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94A3B8;
+    padding: 10px 0;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.jlpt-chips .chip:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.jlpt-chips .chip.active {
+    background: var(--tp-primary);
+    color: #fff;
+    border-color: var(--tp-primary);
+    box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+}
+
+.jlpt-chips .chip.wide { grid-column: span 3; }
+
+/* --- SALARY RANGE (DARK THEME) --- */
+.salary-range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.salary-input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    outline: none;
+}
+
+.salary-input:focus {
+    border-color: var(--tp-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+
+/* --- MOBILE HEADER SIDEBAR (RATA KANAN & COMPACT) --- */
+.filter-mobile-header {
+    display: flex;             /* Pake Flexbox */
+    align-items: center;       /* Center secara vertikal */
+    justify-content: space-between; /* Teks kiri, tombol kanan */
+    width: 100%;               /* Pastikan ambil lebar penuh sidebar */
+    margin-bottom: 35px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.filter-mobile-header h3 {
+    font-size: 20px;           /* Ukuran font judul filter */
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin: 0;                 /* Reset margin bawaan h3 */
+}
+
+/* Tombol Close Rata Kanan & Lebih Kecil */
+#btnCloseFilter {
+    width: 32px;               /* Dikecilkan ukurannya */
+    height: 32px;
+    background: rgba(255, 255, 255, 0.08); /* Efek glass transparan */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;        /* Squircle kecil */
+    color: #94A3B8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    padding: 0;                /* Hilangkan padding default button */
+}
+
+/* Ukuran Icon di dalem tombol */
+#btnCloseFilter i {
+    font-size: 20px;           /* Icon disesuaikan skalanya */
+}
+
+/* Hover effect tetap asik */
+#btnCloseFilter:hover {
+    background: var(--tp-primary); /* Merah Sakura */
+    border-color: var(--tp-primary);
+    color: #ffffff;
+    transform: rotate(90deg);  /* Efek putar pas di-hover */
+}
+
+/* Penyesuaian Media Query */
+@media (max-width: 992px) {
+    .filter-mobile-header {
+        display: flex;         /* Aktif pas di mode mobile */
+    }
+}
+
+/* --- CUSTOM SELECT DARK MODE --- */
+.custom-select-dark {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.custom-select-dark:focus-within {
+    border-color: var(--tp-primary);
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.select-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--tp-primary);
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.arrow-icon {
+    position: absolute;
+    right: 15px;
+    color: #94A3B8;
+    font-size: 18px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.custom-select-dark select {
+    width: 100%;
+    padding: 12px 40px 12px 45px; /* Kasih ruang buat icon kiri & kanan */
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    appearance: none; /* Buang arrow bawaan browser */
+}
+
+/* Styling grup opsi (hanya jalan di beberapa browser, tapi ngebantu) */
+.custom-select-dark select optgroup {
+    background: #111827;
+    color: #94A3B8;
+    font-weight: 800;
+    font-style: normal;
+    padding: 10px;
+}
+
+.custom-select-dark select option {
+    background: #1f2937;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Putar arrow pas diklik (opsional via JS kalau mau pro) */
+.custom-select-dark:focus-within .arrow-icon {
+    transform: rotate(180deg);
+}
+
+/* --- MODERN SORTING PILL --- */
+.sorting-wrapper {
+    display: flex;
+    justify-content: flex-end; /* Tetap di kanan */
+    margin-bottom: 25px;
+}
+
+.sort-pill {
+    display: flex;
+    align-items: center;
+    background: #ffffff;
+    padding: 6px 15px;
+    border-radius: 100px; /* Bentuk Pill */
+    border: 1px solid var(--tp-border);
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+}
+
+.sort-pill:hover {
+    border-color: var(--tp-primary);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.05);
+}
+
+.sort-icon {
+    font-size: 18px;
+    color: var(--tp-primary); /* Ikon Sort warna Sakura */
+}
+
+.sort-pill label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--tp-text-muted);
+    white-space: nowrap;
+}
+
+/* --- THE SELECT BOX --- */
+.select-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.select-box select {
+    appearance: none;         /* MATIKAN STYLE BAWAAN BROWSER */
+    -webkit-appearance: none;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--tp-text-main);
+    padding: 5px 25px 5px 5px; /* Ruang buat custom arrow */
+    cursor: pointer;
+    z-index: 2;
+}
+
+/* Custom Arrow Estetik */
+.custom-arrow {
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    color: var(--tp-text-light);
+    pointer-events: none; /* Biar klik nembus ke select */
+    transition: 0.3s ease;
+}
+
+.sort-pill:focus-within .custom-arrow {
+    transform: rotate(180deg);
+    color: var(--tp-primary);
+}
+
+/* --- STYLE UNTUK OPTION (Hanya terbatas di beberapa browser) --- */
+.select-box select option {
+    background: #ffffff;
+    color: var(--tp-text-main);
+    padding: 10px;
+    font-weight: 600;
+}

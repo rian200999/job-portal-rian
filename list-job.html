@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Lowongan - Japan Tech Career (JTC)</title>
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/jobs-list.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Karir<span>Jepang.</span></a>
+
+            <nav class="navbar">
+                <a href="#home" class="nav-link active">Cari Kerja</a>
+                <a href="#komunitas" class="nav-link">Komunitas</a>
+                <a href="#perusahaan" class="nav-link">Perusahaan</a>
+                <a href="#" class="btn-cta-nav">Buat Profil</a>
+            </nav>
+
+            <div class="menu-icon" id="menu-btn">
+                <i class='bx bx-menu-alt-right'></i>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="tp-job-page-header">
+        <div class="header-pattern"></div>
+        <div class="huge-kanji-bg">求人</div>
+
+        <div class="container">
+            <div class="header-content-flex">
+                <div class="page-title-area" data-aos="fade-right">
+                    <!-- <span class="jp-badge">日本でのキャリア</span> -->
+                    <h1>Cari Pekerjaan <br><span>Impianmu di Jepang</span></h1>
+                    <p>Temukan 500+ lowongan tech aktif di Tokyo, Osaka, & Kyoto.</p>
+                </div>
+
+                <div class="search-floating-wrapper" data-aos="fade-up">
+                    <div class="global-search-box">
+                        <div class="input-wrap">
+                            <i class='bx bx-search-alt'></i>
+                            <input type="text" placeholder="Posisi, Skill, atau Perusahaan..." id="keywordSearch">
+                        </div>
+                        <button class="btn-search-primary">
+                            <span class="btn-text">Cari Loker</span>
+                            <i class='bx bx-right-arrow-alt'></i>
+                        </button>
+                        <button class="btn-mobile-filter" id="btnToggleFilter"><i class='bx bx-filter-alt'></i></button>
+                    </div>
+
+                    <div class="trending-keywords">
+                        <span>Populer:</span>
+                        <a href="#">Golang</a>
+                        <a href="#">React</a>
+                        <a href="#">Tokyo</a>
+                        <a href="#">N3 Level</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="tp-job-list-section">
+        <div class="container job-layout-grid">
+
+            <aside class="filter-sidebar" id="filterSidebar">
+                <div class="filter-mobile-header">
+                    <h3>Filter</h3>
+                    <button id="btnCloseFilter"><i class='bx bx-x'></i></button>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Lokasi (Prefektur)</h4>
+                    <div class="custom-select-dark">
+                        <i class='bx bx-map-pin select-icon'></i>
+                        <select id="prefektur">
+                            <option value="" selected>Semua Lokasi</option>
+                            <optgroup label="Hokkaido & Tohoku">
+                                <option value="hokkaido">Hokkaido</option>
+                                <option value="aomori">Aomori</option>
+                                <option value="iwate">Iwate</option>
+                                <option value="miyagi">Miyagi</option>
+                                <option value="akita">Akita</option>
+                                <option value="yamagata">Yamagata</option>
+                                <option value="fukushima">Fukushima</option>
+                            </optgroup>
+                            <optgroup label="Kanto">
+                                <option value="ibaraki">Ibaraki</option>
+                                <option value="tochigi">Tochigi</option>
+                                <option value="gunma">Gunma</option>
+                                <option value="saitama">Saitama</option>
+                                <option value="chiba">Chiba</option>
+                                <option value="tokyo">Tokyo</option>
+                                <option value="kanagawa">Kanagawa</option>
+                            </optgroup>
+                            <optgroup label="Chubu">
+                                <option value="niigata">Niigata</option>
+                                <option value="toyama">Toyama</option>
+                                <option value="ishikawa">Ishikawa</option>
+                                <option value="fukui">Fukui</option>
+                                <option value="yamanashi">Yamanashi</option>
+                                <option value="nagano">Nagano</option>
+                                <option value="gifu">Gifu</option>
+                                <option value="shizuoka">Shizuoka</option>
+                                <option value="aichi">Aichi</option>
+                            </optgroup>
+                            <optgroup label="Kansai">
+                                <option value="mie">Mie</option>
+                                <option value="shiga">Shiga</option>
+                                <option value="kyoto">Kyoto</option>
+                                <option value="osaka">Osaka</option>
+                                <option value="hyogo">Hyogo</option>
+                                <option value="nara">Nara</option>
+                                <option value="wakayama">Wakayama</option>
+                            </optgroup>
+                            <optgroup label="Chugoku & Shikoku">
+                                <option value="tottori">Tottori</option>
+                                <option value="shimane">Shimane</option>
+                                <option value="okayama">Okayama</option>
+                                <option value="hiroshima">Hiroshima</option>
+                                <option value="yamaguchi">Yamaguchi</option>
+                                <option value="tokushima">Tokushima</option>
+                                <option value="kagawa">Kagawa</option>
+                                <option value="ehime">Ehime</option>
+                                <option value="kochi">Kochi</option>
+                            </optgroup>
+                            <optgroup label="Kyushu & Okinawa">
+                                <option value="fukuoka">Fukuoka</option>
+                                <option value="saga">Saga</option>
+                                <option value="nagasaki">Nagasaki</option>
+                                <option value="kumamoto">Kumamoto</option>
+                                <option value="oita">Oita</option>
+                                <option value="miyazaki">Miyazaki</option>
+                                <option value="kagoshima">Kagoshima</option>
+                                <option value="okinawa">Okinawa</option>
+                            </optgroup>
+                        </select>
+                        <i class='bx bx-chevron-down arrow-icon'></i>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Bidang</h4>
+                    <div class="filter-options">
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> IT</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> Mechanical</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> Electrical</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span>
+                            Construction</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span>
+                            Architecture</label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Level Bahasa Jepang</h4>
+                    <div class="jlpt-chips">
+                        <button class="chip">N1</button>
+                        <button class="chip">N2</button>
+                        <button class="chip">N3</button>
+                        <button class="chip">N4</button>
+                        <button class="chip">N5</button>
+                        <button class="chip">Beginner</button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Range Gaji (¥/Tahun)</h4>
+                    <div class="salary-range">
+                        <input type="number" placeholder="Min" class="salary-input">
+                        <span>-</span>
+                        <input type="number" placeholder="Max" class="salary-input">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <h4 class="filter-title">Status Pekerjaan</h4>
+                    <div class="filter-options">
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> Full-time</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> Freelance</label>
+                        <label class="custom-cb"><input type="checkbox"> <span class="cb-box"></span> Internship</label>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="job-results-area">
+                <div class="results-top-bar">
+                    <div class="result-info">Menampilkan <span>120</span> Lowongan</div>
+                    <div class="sorting-wrapper">
+                        <div class="sort-pill">
+                            <i class='bx bx-sort-alt-2 sort-icon'></i>
+                            <label for="jobSorting">Urutkan:</label>
+                            <div class="select-box">
+                                <select id="jobSorting">
+                                    <option value="terbaru">Terbaru</option>
+                                    <option value="gaji-tinggi">Gaji Tertinggi</option>
+                                    <option value="gaji-rendah">Gaji Terendah</option>
+                                    <option value="relevansi">Relevansi</option>
+                                </select>
+                                <i class='bx bx-chevron-down custom-arrow'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="job-feed" id="jobFeed">
+                    <div class="job-feed" id="jobFeed">
+
+                        <div class="job-card-list" data-aos="fade-up">
+                            <div class="card-left">
+                                <div class="comp-logo">
+                                    <img src="https://ui-avatars.com/api/?name=Sony&background=000&color=fff"
+                                        alt="Sony">
+                                </div>
+                            </div>
+                            <div class="card-mid">
+                                <div class="job-tags">
+                                    <span class="tag status">Full-time</span>
+                                    <span class="tag jlpt">JLPT N3</span>
+                                </div>
+                                <h3 class="job-title">Backend Engineer (Go / Node.js)</h3>
+                                <p class="comp-info">Sony Interactive Entertainment • <i class='bx bx-map'></i>
+                                    Minato-ku, Tokyo</p>
+                                <p class="job-desc">Membangun microservices untuk sistem pembayaran global PlayStation
+                                    Network...</p>
+
+                                <div class="job-perks">
+                                    <div class="perk"><i class='bx bx-yen'></i> ¥5.5M - ¥8.0M</div>
+                                    <div class="perk"><i class='bx bx-home-alt'></i> Hybrid Working</div>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <a href="jobs-detail.html" class="btn-detail-jtc">
+                                    Lihat Detail <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="job-card-list" data-aos="fade-up" data-aos-delay="100">
+                            <div class="card-left">
+                                <div class="comp-logo">
+                                    <img src="https://ui-avatars.com/api/?name=Rakuten&background=bf0000&color=fff"
+                                        alt="Rakuten">
+                                </div>
+                            </div>
+                            <div class="card-mid">
+                                <div class="job-tags">
+                                    <span class="tag status">Full-time</span>
+                                    <span class="tag jlpt">JLPT N2</span>
+                                </div>
+                                <h3 class="job-title">Frontend Developer (React.js)</h3>
+                                <p class="comp-info">Rakuten Group • <i class='bx bx-map'></i> Setagaya, Tokyo</p>
+                                <p class="job-desc">Bergabung dengan tim inti e-commerce terbesar di Jepang untuk
+                                    optimasi performa web...</p>
+
+                                <div class="job-perks">
+                                    <div class="perk"><i class='bx bx-yen'></i> ¥4.5M - ¥7.0M</div>
+                                    <div class="perk"><i class='bx bx-plane-take-off'></i> Relocation Support</div>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <a href="jobs-detail.html" class="btn-detail-jtc">
+                                    Lihat Detail <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="job-card-list" data-aos="fade-up">
+                            <div class="card-left">
+                                <div class="comp-logo">
+                                    <img src="https://ui-avatars.com/api/?name=Sony&background=000&color=fff"
+                                        alt="Sony">
+                                </div>
+                            </div>
+                            <div class="card-mid">
+                                <div class="job-tags">
+                                    <span class="tag status">Full-time</span>
+                                    <span class="tag jlpt">JLPT N3</span>
+                                </div>
+                                <h3 class="job-title">Backend Engineer (Go / Node.js)</h3>
+                                <p class="comp-info">Sony Interactive Entertainment • <i class='bx bx-map'></i>
+                                    Minato-ku, Tokyo</p>
+                                <p class="job-desc">Membangun microservices untuk sistem pembayaran global PlayStation
+                                    Network...</p>
+
+                                <div class="job-perks">
+                                    <div class="perk"><i class='bx bx-yen'></i> ¥5.5M - ¥8.0M</div>
+                                    <div class="perk"><i class='bx bx-home-alt'></i> Hybrid Working</div>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <a href="jobs-detail.html" class="btn-detail-jtc">
+                                    Lihat Detail <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="job-card-list" data-aos="fade-up">
+                            <div class="card-left">
+                                <div class="comp-logo">
+                                    <img src="https://ui-avatars.com/api/?name=Sony&background=000&color=fff"
+                                        alt="Sony">
+                                </div>
+                            </div>
+                            <div class="card-mid">
+                                <div class="job-tags">
+                                    <span class="tag status">Full-time</span>
+                                    <span class="tag jlpt">JLPT N3</span>
+                                </div>
+                                <h3 class="job-title">Backend Engineer (Go / Node.js)</h3>
+                                <p class="comp-info">Sony Interactive Entertainment • <i class='bx bx-map'></i>
+                                    Minato-ku, Tokyo</p>
+                                <p class="job-desc">Membangun microservices untuk sistem pembayaran global PlayStation
+                                    Network...</p>
+
+                                <div class="job-perks">
+                                    <div class="perk"><i class='bx bx-yen'></i> ¥5.5M - ¥8.0M</div>
+                                    <div class="perk"><i class='bx bx-home-alt'></i> Hybrid Working</div>
+                                </div>
+                            </div>
+                            <div class="card-right">
+                                <a href="jobs-detail.html" class="btn-detail-jtc">
+                                    Lihat Detail <i class='bx bx-right-arrow-alt'></i>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="empty-state-wrap" id="emptyState" style="display:none;">
+                        <div class="empty-icon-box">
+                            <i class='bx bx-search-alt'></i>
+                            <div class="empty-circle"></div>
+                        </div>
+                        <h3>Lowongan Tidak Ditemukan</h3>
+                        <p>Maaf, kami tidak menemukan lowongan yang sesuai dengan filter Anda. Coba reset filter atau
+                            gunakan fitur AI Matching.</p>
+                        <div class="empty-actions">
+                            <button class="btn-reset-filter" onclick="resetFilters()">Reset Filter</button>
+                            <span class="or-text">atau</span>
+                            <a href="/matching" class="btn-upload-cv-alt">Upload CV (AI Match)</a>
+                        </div>
+                    </div>
+
+                    <div class="pagination-wrapper">
+                        <button class="pg-btn prev" disabled><i class='bx bx-chevron-left'></i></button>
+                        <div class="pg-numbers">
+                            <button class="pg-num active">1</button>
+                            <button class="pg-num">2</button>
+                            <button class="pg-num">3</button>
+                            <span>...</span>
+                            <button class="pg-num">12</button>
+                        </div>
+                        <button class="pg-btn next"><i class='bx bx-chevron-right'></i></button>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </section>
+
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="assets/js/jobs-list.js"></script>
+
+</body>
+
+</html>
