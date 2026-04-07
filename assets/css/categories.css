@@ -1,34 +1,40 @@
 .tp-categories-compact {
     padding: 30px 0;
-    background: #fff;
-    border-bottom: 1px solid var(--tp-border);
+    background-color: #111418; /* Warna Kuro (Gelap Premium) */
+    border-top: 1px solid #22262D;
+    border-bottom: 1px solid #22262D;
+    position: relative;
+    z-index: 5;
 }
 
 .search-category-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr); /* Sistem 12 Kolom */
-    gap: 20px;
+    grid-template-columns: 3fr 9fr;
+    gap: 30px;
     align-items: center;
 }
 
-/* SEARCH: Span 4 */
-.search-col {
-    grid-column: span 4;
-}
-
+/* --- SEARCH FIELD DARK --- */
 .input-group-simple {
     display: flex;
     align-items: center;
-    background: var(--tp-sakura-bg);
-    padding: 10px 18px;
-    border-radius: 12px;
-    border: 1px solid var(--tp-border);
+    background: #1A1D24; /* Abu-abu sangat gelap */
+    padding: 12px 20px;
+    border-radius: 100px;
+    border: 1px solid #2A2F38;
+    transition: var(--tp-transition);
+}
+
+.input-group-simple:focus-within {
+    background: #111418;
+    border-color: var(--tp-primary);
+    box-shadow: 0 0 0 4px rgba(230, 57, 70, 0.1);
 }
 
 .input-group-simple i {
-    color: var(--tp-primary);
+    color: #8E98A8;
     margin-right: 12px;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .input-group-simple input {
@@ -38,90 +44,172 @@
     width: 100%;
     font-weight: 600;
     font-size: 14px;
+    color: #E2E8F0;
 }
 
-/* CATEGORY: Span 8 */
+.input-group-simple input::placeholder {
+    color: #64748B;
+}
+
+/* --- CATEGORY WRAPPER --- */
 .category-col {
-    grid-column: span 8;
     position: relative;
-    overflow: hidden;
+    width: 100%;
 }
 
 .category-scroll-wrapper {
     display: flex;
-    gap: 12px;
-    overflow-x: auto; /* Aktifkan scroll samping */
-    padding: 5px 5px 15px 5px; /* Padding bawah buat space scrollbar */
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 5px 15px 5px; /* Space bawah buat scrollbar */
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /* Biar smooth di iPhone */
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    cursor: grab; /* Kursor tangan buat indikasi bisa di-drag */
 }
 
-/* Sembunyikan scrollbar tapi tetap bisa di-scroll */
+.category-scroll-wrapper:active {
+    cursor: grabbing; /* Kursor menggenggam saat di-klik */
+}
+
+/* SCROLLBAR TAMPIL ELEGAN (Tipis ala Katana) */
 .category-scroll-wrapper::-webkit-scrollbar {
-    height: 4px; /* Scrollbar tipis banget ala Jepang */
-}
-
-.category-scroll-wrapper::-webkit-scrollbar-thumb {
-    background: var(--tp-border);
-    border-radius: 10px;
+    height: 5px;
 }
 
 .category-scroll-wrapper::-webkit-scrollbar-track {
-    background: transparent;
+    background: #1A1D24;
+    border-radius: 10px;
 }
 
-/* CHIP ITEM STYLE */
+.category-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #3A414C;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--tp-primary); /* Jadi merah saat di-hover */
+}
+
+/* --- CHIP ITEM STYLE (DARK) --- */
 .chip-item {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 16px;
-    background: #fff;
-    border: 1px solid var(--tp-border);
-    border-radius: 50px;
+    gap: 10px;
+    padding: 8px 20px 8px 10px;
+    background: #1A1D24;
+    border: 1px solid #2A2F38;
+    border-radius: 100px;
     text-decoration: none;
-    white-space: nowrap; /* Teks jangan sampai bungkus ke bawah */
-    transition: all 0.3s ease;
-    flex-shrink: 0; /* Biar ukurannya nggak gepeng pas banyak */
+    white-space: nowrap;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    flex-shrink: 0;
+    user-select: none; /* Mencegah teks terblokir saat di-drag */
 }
 
 .chip-kanji {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 900;
-    background: var(--tp-border);
-    color: var(--tp-text-muted);
-    width: 20px;
-    height: 20px;
+    background: #2A2F38;
+    color: #A0ABC0;
+    width: 26px;
+    height: 26px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    transition: var(--tp-transition);
 }
 
 .chip-text {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 700;
-    color: var(--tp-text-muted);
+    color: #A0ABC0;
 }
 
-/* ACTIVE/HOVER */
-.chip-item.active, .chip-item:hover {
+/* HOVER / ACTIVE STATE */
+.chip-item:hover, .chip-item.active {
     border-color: var(--tp-primary);
-    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.08);
-}
-
-.chip-item.active .chip-kanji, .chip-item:hover .chip-kanji {
     background: var(--tp-primary);
-    color: #fff;
+    box-shadow: 0 6px 15px rgba(230, 57, 70, 0.2);
+    transform: translateY(-2px);
 }
 
-.chip-item.active .chip-text, .chip-item:hover .chip-text {
+.chip-item:hover .chip-kanji, .chip-item.active .chip-kanji {
+    background: #ffffff;
     color: var(--tp-primary);
 }
 
-/* Responsive: Di Mobile jadiin 1 kolom semua */
-@media (max-width: 992px) {
-    .search-col, .category-col {
-        grid-column: span 12;
-    }
+.chip-item:hover .chip-text, .chip-item.active .chip-text {
+    color: #ffffff;
 }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .search-category-grid { grid-template-columns: 1fr; gap: 15px; }
+}
+
+/* --- CATEGORY WRAPPER (SMOOTH HORIZONTAL SCROLL) --- */
+.category-col {
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Mencegah layout berantakan */
+}
+
+.category-scroll-wrapper {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px 10px 15px 5px; /* Space bawah buat scrollbar */
+    
+    /* Rahasia Smooth Scroll */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Biar di HP licin gesernya */
+    scroll-snap-type: x mandatory; /* Bikin otomatis nge-pas di elemen saat berhenti geser */
+    width: 100%;
+    margin-top: 10px !important;
+}
+
+/* SCROLLBAR TAMPIL ELEGAN (Tipis) */
+.category-scroll-wrapper::-webkit-scrollbar {
+    height: 0px !important; /* Sembunyikan scrollbar default */
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-track {
+    background: #1A1D24; /* Base dark Jepang */
+    border-radius: 10px;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #3A414C;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+.category-scroll-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--tp-primary); /* Merah saat kursor di atas scrollbar */
+}
+
+/* --- CHIP ITEM STYLE --- */
+.chip-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 20px 8px 10px;
+    background: #1A1D24;
+    border: 1px solid #2A2F38;
+    border-radius: 100px;
+    text-decoration: none;
+    
+    /* Rahasia biar nggak turun ke bawah kalau kepanjangan */
+    white-space: nowrap; 
+    flex-shrink: 0; 
+    
+    /* Biar pas di-scroll, berhentinya presisi di ujung kiri chip */
+    scroll-snap-align: start; 
+    
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* (Sisa CSS Hover & Active sama seperti sebelumnya) */

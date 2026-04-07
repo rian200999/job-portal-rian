@@ -1,104 +1,125 @@
+/* --- BACKGROUND FRESH & TERANG --- */
 .tp-stats-ticker {
-    background-color: #ffffff;
-    padding: 40px 0; /* Gak kegedean, pas buat divider */
-    border-top: 1px solid var(--tp-border);
-    border-bottom: 1px solid var(--tp-border);
+    background-color: #F8F9FA; /* Abu-abu sangat terang, bikin fresh */
+    padding: 0 0 80px 0; /* Padding atas di-nol-kan karena grid-nya naik */
+    position: relative;
+}
+
+/* --- GRID MELAYANG (OVERLAPPING) --- */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    position: relative;
+    z-index: 10;
+    margin-top: -80px; /* INI KUNCINYA: Menarik card ke atas sebesar 80px */
+}
+
+/* --- KARTU STATISTIK (TEMA TERANG) --- */
+.stat-card {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 20px;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    transition: var(--tp-transition);
+    position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04); /* Shadow lembut */
+    margin-top: -80px !important; /* Card mulai dari bawah, lalu naik ke posisi normal dengan margin negatif */
 }
 
-.ticker-wrapper {
+/* Garis aksen merah di bawah */
+.stat-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 0;
+    height: 4px;
+    background: var(--tp-primary);
+    transition: width 0.5s ease;
+}
+
+/* --- STATE AKTIF (Dari JS) & HOVER --- */
+.stat-card.active, .stat-card:hover {
+    transform: translateY(-8px); /* Card naik sedikit saat aktif */
+    box-shadow: 0 20px 40px rgba(230, 57, 70, 0.08); /* Shadow kemerahan */
+    border-color: rgba(230, 57, 70, 0.15);
+}
+
+.stat-card.active::after, .stat-card:hover::after {
+    width: 100%; /* Garis merah penuh */
+}
+
+/* --- KONTEN DALAM KARTU --- */
+.stat-icon {
+    font-size: 40px;
+    color: var(--tp-text-light); /* Pink */
+    margin-bottom: 5px;
+    transition: var(--tp-transition);
+}
+
+.stat-card.active .stat-icon, .stat-card:hover .stat-icon {
+    color: var(--tp-primary); /* Ikon jadi merah terang saat aktif */
+}
+
+.stat-head {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-}
-
-.ticker-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0.4; /* Default-nya agak pudar */
-    filter: grayscale(1);
-}
-
-/* --- STATE AKTIF (FOCUS) --- */
-.ticker-item.active {
-    opacity: 1;
-    filter: grayscale(0);
-    transform: scale(1.05);
-}
-
-.ticker-main {
-    display: flex;
-    align-items: baseline;
-    gap: 8px;
+    gap: 10px;
 }
 
 .ticker-jp {
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 800;
     color: var(--tp-primary);
-    writing-mode: vertical-rl; /* Kanji vertikal kecil ala poster */
-    letter-spacing: 2px;
+    background: var(--tp-primary-light);
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+.ticker-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--tp-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .ticker-num {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 800;
-    color: var(--tp-text-main);
-    letter-spacing: -1px;
-}
-
-.ticker-item.active .ticker-num {
-    color: var(--tp-primary);
+    color: var(--tp-text-main); /* Warna angka kembali gelap */
+    line-height: 1;
+    margin: 5px 0;
 }
 
 .ticker-num::after {
     content: '+';
-    font-size: 16px;
+    font-size: 20px;
+    color: var(--tp-primary);
     margin-left: 2px;
 }
 
-.ticker-label {
-    font-size: 13px;
-    font-weight: 700;
+.stat-desc {
+    font-size: 14px;
+    font-weight: 500;
     color: var(--tp-text-muted);
+    margin: 0;
+    line-height: 1.5;
 }
 
-/* --- DETAIL (Cuma muncul pas aktif) --- */
-.ticker-detail {
-    max-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    transition: all 0.6s ease;
-    opacity: 0;
-}
-
-.ticker-item.active .ticker-detail {
-    max-width: 300px;
-    opacity: 1;
-    padding-left: 15px;
-    border-left: 2px solid var(--tp-primary);
-}
-
-.ticker-detail p {
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--tp-text-muted);
-}
-
-/* Pembatas garis vertikal tipis */
-.ticker-sep {
-    width: 1px;
-    height: 30px;
-    background-color: var(--tp-border);
-}
-
-/* Mobile */
+/* Mobile Responsive */
 @media (max-width: 992px) {
-    .ticker-wrapper { flex-direction: column; align-items: flex-start; gap: 30px; }
-    .ticker-sep { display: none; }
-    .ticker-item { opacity: 1; filter: grayscale(0); }
-    .ticker-detail { max-width: 100%; opacity: 1; border-left: none; padding-left: 0; white-space: normal; }
+    .stats-grid { 
+        grid-template-columns: repeat(2, 1fr); 
+        margin-top: -50px; /* Disesuaikan untuk mobile */
+    }
+}
+
+@media (max-width: 576px) {
+    .stats-grid { grid-template-columns: 1fr; }
 }

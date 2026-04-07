@@ -2,38 +2,38 @@
     <div class="container matching-wrapper">
 
         <div class="matching-info" data-aos="fade-right">
-            <span class="jp-vertical-label">AI マッチング</span>
+            <div class="jp-vertical-label">AI マッチング</div>
 
             <div class="info-content">
                 <div class="ai-status-pulse">
                     <span class="pulse-dot"></span>
-                    <span class="pulse-text">AI Engine: Online & Scanning</span>
+                    <span class="pulse-text">JTC AI Engine: Online</span>
                 </div>
 
                 <h2>Precision <br><span>Job Matching</span></h2>
 
+                <p class="desc-main">Sistem kami tidak hanya membaca kata kunci, tapi memahami konteks pengalaman Anda
+                    untuk dipasangkan dengan standar industri di Jepang.</p>
+
                 <div class="matching-features">
                     <div class="feat-item">
-                        <i class='bx bx-check-double'></i>
+                        <div class="feat-icon"><i class='bx bx-check-double'></i></div>
                         <span>Skill Extraction (N1-N5)</span>
                     </div>
                     <div class="feat-item">
-                        <i class='bx bx-target-lock'></i>
+                        <div class="feat-icon"><i class='bx bx-target-lock'></i></div>
                         <span>Prefecture Preference</span>
                     </div>
                     <div class="feat-item">
-                        <i class='bx bx-trending-up'></i>
+                        <div class="feat-icon"><i class='bx bx-trending-up'></i></div>
                         <span>Salary Benchmarking</span>
                     </div>
                 </div>
 
-                <p>Sistem kami tidak hanya membaca kata kunci, tapi memahami konteks pengalaman Anda untuk dipasangkan
-                    dengan standar industri di Jepang.</p>
-
                 <div class="floating-chips">
-                    <span class="chip c1">Backend</span>
-                    <span class="chip c2">JLPT N3</span>
-                    <span class="chip c3">Tokyo</span>
+                    <span class="chip c1"><i class='bx bx-code-alt'></i> Backend</span>
+                    <span class="chip c2"><i class='bx bx-book-bookmark'></i> JLPT N3</span>
+                    <span class="chip c3"><i class='bx bx-map-pin'></i> Tokyo</span>
                 </div>
             </div>
         </div>
@@ -41,6 +41,7 @@
         <div class="matching-scanner-area" data-aos="fade-left">
             <div class="scanner-box">
                 <div class="scan-line"></div>
+                <div class="scanner-grid-bg"></div>
 
                 <div class="upload-zone" id="dropZone">
                     <div class="upload-icon">
@@ -50,13 +51,13 @@
                         <strong>Upload CV Anda</strong>
                         <span>PDF, DOCX (Max. 5MB)</span>
                     </div>
-                    <input type="file" id="cvUpload" hidden>
+                    <input type="file" id="cvUpload" hidden accept=".pdf,.doc,.docx">
                     <button class="btn-upload-trigger">Pilih File</button>
                 </div>
-
-                <div class="decor-particle p1"></div>
-                <div class="decor-particle p2"></div>
             </div>
+
+            <div class="decor-particle p1"></div>
+            <div class="decor-particle p2"></div>
         </div>
 
     </div>

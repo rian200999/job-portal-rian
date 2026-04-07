@@ -1,140 +1,342 @@
-.tp-articles-editorial {
+/* --- SECTION STYLING --- */
+.tp-articles-redesign {
     padding: 100px 0;
-    background-color: #ffffff;
+    background-color: #F4F7F9; /* Abu-abu kebiruan super terang, ssuai request */
 }
 
-.article-header {
+/* --- THE FLEX WRAPPER --- */
+.article-flex-wrapper {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 60px;
+    gap: 60px;
+    align-items: flex-start;
 }
 
-.btn-all-articles {
-    color: var(--tp-primary);
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 14px;
-    border-bottom: 2px solid var(--tp-primary);
-    padding-bottom: 5px;
-    transition: 0.3s;
-}
-
-.btn-all-articles:hover { gap: 10px; opacity: 0.7; }
-
-/* --- GRID LAYOUT --- */
-.article-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.article-card {
+/* --- KOLOM KIRI (MAIN CONTENT) --- */
+.main-content {
+    flex: 1; /* Ambil sisa ruang */
     display: flex;
     flex-direction: column;
-    transition: 0.4s ease;
+    gap: 30px;
 }
 
-/* Efek Offset Tengah */
-.article-card.offset-down {
-    margin-top: 50px;
+.main-header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    margin-bottom: 20px;
 }
 
-.card-img-wrapper {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 4/3;
+.main-header h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: var(--tp-text-main);
+    line-height: 1.2;
+}
+
+.main-header h2 span { color: var(--tp-primary); }
+
+.section-desc {
+    color: var(--tp-text-muted);
+    font-size: 15px;
+    max-width: 500px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+/* Button Clean JTC (Rata kiri) */
+.btn-clean-jtc {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--tp-primary);
+    background: transparent;
+    border-bottom: 2px solid var(--tp-border);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 14px;
+    padding-bottom: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-clean-jtc:hover {
+    border-color: var(--tp-primary);
+    gap: 12px;
+}
+
+/* --- GRID ARTIKEL (Standard Card) --- */
+.latest-articles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* THE STANDARD CARD STYLE */
+.standard-card {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
     border-radius: 20px;
     overflow: hidden;
-    margin-bottom: 25px;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
 }
 
-.card-img-wrapper img {
+.standard-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(230, 57, 70, 0.05);
+    border-color: rgba(230, 57, 70, 0.2);
+}
+
+.card-img-wrap {
+    width: 100%;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+}
+
+.card-img-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+    transition: transform 0.6s ease;
 }
 
-.article-card:hover .card-img-wrapper img {
-    transform: scale(1.1);
+.standard-card:hover .card-img-wrap img {
+    transform: scale(1.08);
 }
 
-/* Tanggal Melayang */
-.card-date {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    background: #ffffff;
-    padding: 10px;
-    border-radius: 12px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: 900;
-    line-height: 1;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+.card-body-clean {
+    padding: 25px 20px;
+    flex-grow: 1;
 }
 
-.card-date span {
-    display: block;
-    font-size: 18px;
-    color: var(--tp-primary);
-}
-
-/* Meta Info */
-.card-meta {
+/* Meta Info (v2) */
+.card-meta-v2 {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
-.read-time {
+.card-cat-v2 {
+    font-size: 9px;
+    font-weight: 900;
+    background: var(--tp-sakura-bg);
+    color: var(--tp-primary);
+    padding: 5px 10px;
+    border-radius: 50px;
+    letter-spacing: 1px;
+}
+
+.card-cat-v2.blue { background: #E0F2FE; color: #0284C7; }
+.card-cat-v2.green { background: #DCFCE7; color: #16A34A; }
+
+.card-date-v2 {
     font-size: 11px;
     font-weight: 700;
-    color: var(--tp-text-light);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.card-cat {
-    font-size: 10px;
-    font-weight: 800;
-    color: var(--tp-primary);
-    text-decoration: none;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    color: var(--tp-text-muted);
 }
 
 /* Typography */
-.article-card h3 {
-    font-size: 22px;
+.standard-card h3 {
+    font-size: 17px;
     font-weight: 800;
-    line-height: 1.3;
-    margin-bottom: 15px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: var(--tp-text-main);
 }
 
-.article-card h3 a {
+.standard-card h3 a {
     text-decoration: none;
     color: var(--tp-text-main);
     transition: 0.3s;
 }
 
-.article-card:hover h3 a { color: var(--tp-primary); }
+.standard-card:hover h3 a { color: var(--tp-primary); }
 
-.article-card p {
-    font-size: 14px;
+.standard-card p {
+    font-size: 13px;
     color: var(--tp-text-muted);
     line-height: 1.6;
+    margin: 0;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 2; /* Mentok 2 baris */
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .article-grid { grid-template-columns: 1fr; }
-    .article-card.offset-down { margin-top: 0; }
+/* --- KOLOM KANAN (SIDEBAR-STICKY) --- */
+.sidebar-content {
+    width: 380px; /* Lebar tetap sidebarnya */
+    position: sticky;
+    top: 100px; /* Nempel saat discroll */
 }
+
+.category-list-box {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 24px;
+    padding: 35px 30px;
+}
+
+.cat-list-title {
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--tp-text-main);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.title-line {
+    width: 4px;
+    height: 18px;
+    background: var(--tp-primary);
+    border-radius: 10px;
+}
+
+/* List Style */
+.article-list-minimal {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.article-list-minimal li {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.article-list-minimal li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.article-list-minimal li a {
+    text-decoration: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: 0.3s;
+}
+
+.list-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--tp-border);
+    border-radius: 50%;
+    margin-top: 6px;
+    transition: 0.3s;
+}
+
+.link-text {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--tp-text-main);
+    line-height: 1.5;
+    transition: 0.3s;
+}
+
+/* Hover Effect Kanan */
+.article-list-minimal li a:hover .list-dot {
+    background: var(--tp-primary);
+    transform: scale(1.3);
+}
+
+.article-list-minimal li a:hover .link-text {
+    color: var(--tp-primary);
+    transform: translateX(5px);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .article-flex-wrapper { gap: 40px; }
+    .sidebar-content { width: 320px; }
+}
+
+@media (max-width: 992px) {
+    .article-flex-wrapper { grid-template-columns: 1fr; }
+    .latest-articles-grid { grid-template-columns: repeat(2, 1fr); }
+    .sidebar-content { width: 100%; position: static; margin-top: 50px;}
+}
+
+@media (max-width: 576px) {
+    .main-header h2 { font-size: 32px; }
+    .latest-articles-grid { grid-template-columns: 1fr; }
+    .standard-card p { -webkit-line-clamp: none; } /* Biar p penuh di HP */
+}
+
+/* --- BASE & GRID SAMA SEPERTI SEBELUMNYA --- */
+.tp-articles-redesign { padding: 100px 0; background-color: #F4F7F9; }
+.article-flex-wrapper { display: flex; gap: 40px; align-items: flex-start; }
+.main-content { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+.latest-articles-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+/* --- CARD STYLE ENHANCEMENT --- */
+.standard-card {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+.card-body-clean { padding: 25px 20px; display: flex; flex-direction: column; gap: 12px; }
+
+/* Meta Card (Atas Judul) */
+.card-meta-v2 { display: flex; justify-content: space-between; align-items: center; }
+
+.card-read-time {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--tp-text-light);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+/* Judul Artikel */
+.standard-card h3 { font-size: 17px; font-weight: 800; line-height: 1.4; margin: 0; }
+.standard-card h3 a { text-decoration: none; color: var(--tp-text-main); }
+
+/* Author Box (Bawah Judul) */
+.author-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.author-img { width: 24px; height: 24px; border-radius: 50%; object-fit: cover; border: 1px solid var(--tp-border); }
+.author-name { font-size: 12px; font-weight: 700; color: var(--tp-text-muted); }
+
+/* --- SIDEBAR LIST ENHANCEMENT --- */
+.sidebar-content { width: 350px; position: sticky; top: 100px; }
+.category-list-box { background: #ffffff; border: 1px solid var(--tp-border); border-radius: 24px; padding: 30px; }
+
+.article-list-minimal { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px; }
+
+.list-content-wrap { display: flex; flex-direction: column; gap: 5px; }
+
+.link-text { font-size: 14px; font-weight: 700; color: var(--tp-text-main); line-height: 1.4; transition: 0.3s; }
+
+/* Meta List (Nama Penulis & Waktu) */
+.list-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    color: var(--tp-text-light);
+    font-weight: 600;
+}
+
+.l-sep { opacity: 0.5; }
+
+/* Hover Effects */
+.article-list-minimal li a:hover .link-text { color: var(--tp-primary); transform: translateX(3px); }
+.standard-card:hover { transform: translateY(-8px); border-color: rgba(230, 57, 70, 0.2); }

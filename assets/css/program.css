@@ -1,6 +1,7 @@
+/* --- SECTION BACKGROUND --- */
 .tp-learning-section {
-    padding: 80px 0;
-    background-color: #ffffff;
+    padding: 100px 0;
+    background-color: #F8FAFC; /* Sedikit abu-abu biar banner putih/gelapnya pop-up */
 }
 
 .learning-header {
@@ -8,127 +9,317 @@
     margin-bottom: 50px;
 }
 
-/* --- THE GRID --- */
-.learning-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-
-.learn-card {
-    background: #ffffff;
-    border: 1px solid var(--tp-border);
-    border-radius: 24px;
-    padding: 40px 30px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-/* Featured (Learning Hub) - Stand out tapi tetep putih bersih */
-.learn-card.featured {
-    border-color: var(--tp-primary);
-    background-color: var(--tp-sakura-bg); /* Pink sangat muda #FFF5F7 */
-    box-shadow: 0 20px 40px rgba(230, 57, 70, 0.08);
-}
-
-.card-badge {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    font-size: 10px;
+.learning-header h2 {
+    font-size: 38px;
     font-weight: 800;
-    color: var(--tp-primary);
-    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: var(--tp-text-main);
 }
 
-.learn-card h3 {
-    font-size: 24px;
-    font-weight: 800;
-    color: var(--tp-text-main); /* Hitam pekat */
-    margin-bottom: 12px;
-}
-
-.learn-card p {
-    font-size: 14px;
-    line-height: 1.6;
+.learning-header .section-desc {
     color: var(--tp-text-muted);
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   1. PREMIUM FLAGSHIP BANNER (15 JT)
+   ========================================================================== */
+.premium-banner-wrapper {
     margin-bottom: 30px;
-    min-height: 45px;
 }
 
-.card-price {
-    font-size: 24px;
-    font-weight: 900;
-    color: var(--tp-primary);
-    margin-bottom: 30px;
+.premium-banner {
+    background: var(--tp-text-main); /* Deep Navy / Dark Color */
+    border-radius: 30px;
+    padding: 50px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 60px rgba(29, 53, 87, 0.15);
+    transition: transform 0.3s ease;
 }
 
-.card-price.free {
-    font-size: 14px;
-    color: var(--tp-text-light);
-    letter-spacing: 1px;
+.premium-banner:hover {
+    transform: translateY(-5px);
 }
 
-/* --- BUTTONS --- */
-.btn-primary-jtc {
-    background: var(--tp-primary);
+.banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 65%;
+}
+
+.badge-premium {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--tp-primary), #FF8E8E);
     color: #ffffff;
-    text-align: center;
-    padding: 15px;
-    border-radius: 12px;
-    text-decoration: none;
+    font-size: 12px;
     font-weight: 800;
-    font-size: 14px;
+    padding: 6px 16px;
+    border-radius: 50px;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.banner-title {
+    font-size: 42px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.banner-desc {
+    font-size: 16px;
+    color: #94A3B8;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Fitur Banner */
+.banner-features {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.banner-features span {
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
+    color: #E2E8F0;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.banner-features i {
+    color: var(--tp-primary);
+    font-size: 18px;
+}
+
+/* Harga & Tombol */
+.banner-action {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.price-wrap-premium {
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.price-wrap-premium .currency {
+    color: #94A3B8;
+    font-weight: 700;
+    margin-top: 6px;
+}
+
+.price-wrap-premium .amount {
+    font-size: 40px;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: -1px;
+}
+
+.btn-gold-jtc {
+    background: #ffffff;
+    color: var(--tp-text-main);
+    padding: 16px 32px;
+    border-radius: 14px;
+    font-weight: 800;
+    font-size: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
     gap: 10px;
     transition: 0.3s;
 }
 
-.btn-primary-jtc:hover {
-    background: var(--tp-text-main);
-    transform: translateY(-3px);
+.btn-gold-jtc:hover {
+    background: var(--tp-primary);
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(230, 57, 70, 0.3);
 }
 
-.btn-outline-jtc {
-    border: 2px solid var(--tp-text-main);
-    color: var(--tp-text-main);
-    text-align: center;
-    padding: 13px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 14px;
+.btn-gold-jtc:hover i {
+    transform: translateX(5px);
+}
+
+/* Visual Banner (Kanan) */
+.banner-visual {
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.huge-kanji {
+    font-size: 250px;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    line-height: 1;
+    user-select: none;
+}
+
+.glow-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background: var(--tp-primary);
+    filter: blur(100px);
+    opacity: 0.3;
+    border-radius: 50%;
+}
+
+/* ==========================================================================
+   2. SECONDARY PROGRAMS (2 KOLOM BAWAH)
+   ========================================================================== */
+.secondary-programs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.learn-card-alt {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 24px;
+    padding: 35px;
+    display: flex;
+    gap: 25px;
     transition: 0.3s;
 }
 
-.btn-outline-jtc:hover {
-    background: var(--tp-text-main);
-    color: #fff;
+.learn-card-alt:hover {
+    border-color: rgba(230, 57, 70, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    transform: translateY(-5px);
+}
+
+.card-icon-wrap {
+    width: 60px;
+    height: 60px;
+    background: var(--tp-sakura-bg);
+    color: var(--tp-primary);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    flex-shrink: 0;
+}
+
+.card-info {
+    flex-grow: 1;
+}
+
+.card-info h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--tp-text-main);
+    margin-bottom: 8px;
+}
+
+.card-info p {
+    font-size: 14px;
+    color: var(--tp-text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-status {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--tp-text-muted);
+    letter-spacing: 1px;
+}
+
+.btn-text-jtc {
+    color: var(--tp-primary);
+    font-weight: 800;
+    font-size: 14px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.btn-text-jtc:hover {
+    gap: 10px;
 }
 
 /* Locked State */
-.learn-card.locked {
-    background: #f9fafb;
+.learn-card-alt.locked {
+    background: transparent;
     border-style: dashed;
-    opacity: 0.8;
+    border-width: 2px;
 }
 
-.lock-icon { font-size: 24px; color: var(--tp-text-light); margin-bottom: 15px; }
-.status-badge {
-    font-size: 10px;
+.learn-card-alt.locked:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--tp-border);
+}
+
+.learn-card-alt.locked .card-icon-wrap {
+    background: #F1F5F9;
+    color: #94A3B8;
+}
+
+.status-badge-alt {
+    background: #F1F5F9;
+    color: #64748B;
+    font-size: 11px;
     font-weight: 800;
-    color: var(--tp-text-light);
-    border: 1px solid var(--tp-border);
-    padding: 4px 12px;
+    padding: 8px 16px;
     border-radius: 50px;
-    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 1px;
 }
 
-/* Responsive */
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
 @media (max-width: 992px) {
-    .learning-grid { grid-template-columns: 1fr; }
+    .premium-banner {
+        flex-direction: column;
+        padding: 40px 30px;
+    }
+    
+    .banner-content { max-width: 100%; }
+    
+    .banner-action {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+    
+    .banner-visual { display: none; } /* Sembunyikan kanji raksasa di HP */
+    
+    .secondary-programs { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 576px) {
+    .learn-card-alt { flex-direction: column; gap: 15px; }
 }

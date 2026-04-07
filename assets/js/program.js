@@ -1,4 +1,16 @@
 window.initLearningLogic = function() {
-    // Section ini sekarang statis & clean agar user fokus ke CTA
-    console.log("Learning Section Ready 🌸");
+    // Interaktivitas difokuskan di CSS Hover untuk memaksimalkan Conversion Rate
+    
+    // (Opsional) Efek klik khusus untuk Featured Card
+    const featuredBtn = document.querySelector('.btn-primary-jtc');
+    if(featuredBtn) {
+        featuredBtn.addEventListener('click', function(e) {
+            // Bisa tambahkan logic tracking Google Analytics di sini nanti
+            console.log("Tombol JTC Learning Hub (15jt) di-klik! 🚀");
+        });
+    }
 };
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLearningLogic();
+});
