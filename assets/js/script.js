@@ -1,7 +1,6 @@
 const loadSection = async (containerId, filePath) => {
     try {
         const response = await fetch(filePath);
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
         const htmlText = await response.text();
         const container = document.getElementById(containerId);
         if (container) { container.innerHTML += htmlText; }
@@ -9,32 +8,27 @@ const loadSection = async (containerId, filePath) => {
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
-    // 1. Load Sections
     await loadSection('app-content', './sections/hero.html');
-    await loadSection('app-content', './sections/layanan.html');
-    await loadSection('app-content', './sections/tentang.html');
-    await loadSection('app-content', './sections/karya.html'); 
-    await loadSection('app-content', './sections/harga.html');
-    await loadSection('app-content', './sections/artikel.html');
+    await loadSection('app-content', './sections/statistics.html');
+    await loadSection('app-content', './sections/categories.html');
+    await loadSection('app-content', './sections/jobs.html');
+    await loadSection('app-content', './sections/carakerja.html');
+    await loadSection('app-content', './sections/job-matching.html');
+    await loadSection('app-content', './sections/program.html');
     await loadSection('app-content', './sections/komunitas.html');
-    await loadSection('app-content', './sections/exclusive.html');
-    await loadSection('app-content', './sections/testimoni.html');
-    await loadSection('app-content', './sections/kerjasama.html');
-    await loadSection('app-footer', './sections/footer.html');
-
-    // 2. Init Logics
-    if (typeof window.initHeroLogic === 'function') { window.initHeroLogic(); }
-    if (typeof window.initLayananLogic === 'function') { window.initLayananLogic(); }
-    if (typeof window.initTentangLogic === 'function') { window.initTentangLogic(); }
-    if (typeof window.initKaryaLogic === 'function') { window.initKaryaLogic(); } // <--- EKSEKUSI JS KARYA
-    if (typeof window.initHargaLogic === 'function') { window.initHargaLogic(); } // <--- EKSEKUSI JS HARGA
-    if (typeof window.initArtikelLogic === 'function') { window.initArtikelLogic(); } // <--- EKSEKUSI JS ARTIKEL
-    if (typeof window.initKomunitasLogic === 'function') { window.initKomunitasLogic(); } // <--- EKSEKUSI JS KOMUNITAS
-    if (typeof window.initExclusiveLogic === 'function') { window.initExclusiveLogic(); } // <--- EKSEKUSI JS EXCLUSIVE
-    if (typeof window.initTestimoniLogic === 'function') { window.initTestimoniLogic(); } // <--- EKSEKUSI JS TESTIMONI
-    if (typeof window.initKerjasamaLogic === 'function') { window.initKerjasamaLogic(); } // <--- EKSEKUSI JS KERJASAMA
-    if (typeof window.initFooterLogic === 'function') { window.initFooterLogic(); } // <--- EKSEKUSI JS FOOTER
+    await loadSection('app-content', './sections/artikel.html');
+    await loadSection('app-content', './sections/faq.html');
     
-    // Init AOS
+    if (typeof window.initHeroLogic === 'function') { window.initHeroLogic(); }
+    if (typeof window.initStatisticsLogic === 'function') { window.initStatisticsLogic(); }
+    if (typeof window.initCategoriesLogic === 'function') { window.initCategoriesLogic(); }
+    if (typeof window.initJobsLogic === 'function') { window.initJobsLogic(); }
+    if (typeof window.initFlowLogic === 'function') { window.initFlowLogic(); }
+    if (typeof window.initMatchingLogic === 'function') { window.initMatchingLogic(); }
+    if (typeof window.initLearningLogic === 'function') { window.initLearningLogic(); }
+    if (typeof window.initCommunityLogic === 'function') { window.initCommunityLogic(); }
+    if (typeof window.initArticlesLogic === 'function') { window.initArticlesLogic(); }
+    if (typeof window.initFaqLogic === 'function') { window.initFaqLogic(); }
+
     if (typeof AOS !== 'undefined') { AOS.init({ once: true, duration: 800 }); }
 });

@@ -1,0 +1,165 @@
+.tp-jobs-featured {
+    padding: 100px 0;
+    background-color: #ffffff;
+}
+
+.section-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+}
+
+.section-top h2 {
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.btn-all-jobs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--tp-primary);
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.btn-all-jobs:hover {
+    border-bottom-color: var(--tp-primary);
+    gap: 15px;
+}
+
+/* --- THE JOB ROW --- */
+.jobs-list-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.job-row-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 0.5fr;
+    align-items: center;
+    padding: 35px 20px;
+    border-bottom: 1px solid var(--tp-border);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.job-row-item:hover {
+    background-color: var(--tp-sakura-bg);
+    border-left: 5px solid var(--tp-primary);
+    padding-left: 30px;
+}
+
+.job-main-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.comp-logo {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f8f9fa;
+}
+
+.comp-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.job-title-meta h3 {
+    font-size: 19px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: var(--tp-text-main);
+}
+
+.job-title-meta p {
+    font-size: 14px;
+    color: var(--tp-text-muted);
+    font-weight: 500;
+}
+
+/* Tags Style */
+.job-tags {
+    display: flex;
+    gap: 10px;
+}
+
+.job-tags span {
+    font-size: 11px;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.tag-visa { background: rgba(230, 57, 70, 0.1); color: var(--tp-primary); }
+.tag-remote { background: #f3f4f6; color: #4b5563; }
+.tag-shinchaku { background: var(--tp-primary); color: #fff; }
+
+/* Salary Section */
+.job-salary .salary-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--tp-text-light);
+    margin-bottom: 5px;
+}
+
+.job-salary p {
+    font-size: 17px;
+    font-weight: 800;
+    color: var(--tp-primary);
+}
+
+/* Action Button */
+.btn-detail {
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    color: var(--tp-text-main);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: 0.6;
+    transition: 0.3s;
+}
+
+.job-row-item:hover .btn-detail {
+    opacity: 1;
+    color: var(--tp-primary);
+}
+
+/* Kanji Decor (Absolute Position) */
+.row-kanji {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 60px;
+    font-weight: 900;
+    color: rgba(230, 57, 70, 0.03);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Mobile: Berubah jadi card stack */
+@media (max-width: 992px) {
+    .job-row-item {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .job-action { text-align: left; }
+    .row-kanji { display: none; }
+}

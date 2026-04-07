@@ -1,61 +1,322 @@
 :root {
-    /* PALET WARNA HIJAU */
-    --tp-darkest: #011E17;     /* Ijo sangat tua (Background) */
-    --tp-dark: #022C22;        /* Ijo Tua (Card/Elevated) */
-    --tp-green: #059669;       /* Ijo Medium (Primary Button/Accent) */
-    --tp-light: #34D399;       /* Ijo Muda (Highlight/Glow) */
+    /* SAKURA TEMA (PINK, WHITE, RED, BLACK) */
+    --tp-sakura-bg: #FFF5F7;    /* Pink Sakura sangat muda untuk background */
+    --tp-white: #FFFFFF;
+    --tp-primary: #E63946;     /* Merah Nippon untuk Aksen */
+    --tp-primary-dark: #BC002D;
     
-    --tp-text-main: #ECFDF5;   /* Putih kehijauan */
-    --tp-text-muted: #A7F3D0;  /* Ijo pudar untuk teks sekunder */
-    --tp-border: rgba(52, 211, 153, 0.15); /* Border ijo transparan */
+    /* Text Colors */
+    --tp-text-main: #111827;   /* Hitam tajam */
+    --tp-text-muted: #4B5563;  /* Abu-abu gelap */
+    --tp-text-light: #9CA3AF;  /* Abu-abu muda */
     
+    --tp-border: rgba(230, 57, 70, 0.1);
+    --tp-shadow: 0 20px 40px rgba(230, 57, 70, 0.05);
     --tp-transition: all 0.3s ease;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 
-body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    background-color: var(--tp-darkest);
-    color: var(--tp-text-main);
-    line-height: 1.6;
+/* =========================================
+   1. RESET & BASE STYLES
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-a { text-decoration: none; transition: var(--tp-transition); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
-
-/* HEADER STYLING */
-.header {
-    position: fixed; top: 0; left: 0; width: 100%;
-    padding: 20px 0;
-    background: rgba(1, 30, 23, 0.85); /* Ijo transparan */
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--tp-border);
-    z-index: 1000;
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--tp-sakura-bg); /* Terapkan background pink lembut */
+    color: var(--tp-text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--tp-transition);
+}
 
-.logo { font-size: 24px; font-weight: 800; color: var(--tp-text-main); }
-.logo span { color: var(--tp-light); }
+ul { list-style: none; }
+img { max-width: 100%; display: block; }
 
-.navbar { display: flex; align-items: center; gap: 32px; }
-.nav-link { font-size: 15px; font-weight: 500; color: var(--tp-text-muted); }
-.nav-link:hover, .nav-link.active { color: var(--tp-light); }
+/* Global Container */
+.container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Custom Scrollbar (Red Accent) */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--tp-white); }
+::-webkit-scrollbar-thumb { 
+    background: #D1D5DB; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--tp-primary); }
+
+/* =========================================
+   2. TYPOGRAPHY
+   ========================================= */
+h1, h2, h3, h4 {
+    font-weight: 800;
+    line-height: 1.2;
+    color: var(--tp-text-main);
+}
+
+h1 { font-size: clamp(32px, 5vw, 56px); }
+h1 span { color: var(--tp-primary); } /* Highlight teks jadi Merah */
+
+p {
+    font-size: 17px;
+    color: var(--tp-text-muted);
+}
+
+/* =========================================
+   3. HEADER / NAVBAR (Light Version)
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0; left: 0; width: 100%;
+    padding: 24px 0;
+    background: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--tp-border);
+    z-index: 1000;
+    transition: var(--tp-transition);
+}
+
+.header.scrolled {
+    padding: 16px 0;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--tp-text-main);
+}
+
+.logo span { color: var(--tp-primary); }
+
+.nav-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--tp-text-muted);
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--tp-primary);
+}
 
 .btn-cta-nav {
     padding: 10px 24px;
-    background: var(--tp-green);
+    background: var(--tp-primary);
     color: #fff !important;
-    border-radius: 8px; font-weight: 600; font-size: 14px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 14px;
 }
-.btn-cta-nav:hover { background: var(--tp-light); color: var(--tp-darkest) !important; }
 
-.menu-icon { display: none; font-size: 28px; color: var(--tp-text-main); cursor: pointer; }
+.btn-cta-nav:hover {
+    background: var(--tp-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(230, 57, 70, 0.2);
+}
 
-@media (max-width: 768px) {
+/* =========================================
+   4. REUSABLE COMPONENTS
+   ========================================= */
+.tp-status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 18px;
+    background: var(--tp-primary-light); /* Background merah muda tipis */
+    border: 1px solid rgba(230, 57, 70, 0.1);
+    border-radius: 100px;
+    margin-bottom: 25px;
+}
+
+.status-text {
+    color: var(--tp-primary);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+.status-dot {
+    width: 8px; height: 8px;
+    background: var(--tp-primary);
+    border-radius: 50%;
+    position: relative;
+}
+
+.status-dot::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    border: 2px solid var(--tp-primary);
+    border-radius: 50%;
+    animation: pulseRed 2s infinite;
+}
+
+.hero-glow {
+    position: absolute; 
+    top: -10%; 
+    right: 5%;
+    width: 500px; 
+    height: 500px;
+    background: radial-gradient(circle, rgba(230, 57, 70, 0.05) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0; 
+    pointer-events: none;
+}
+
+@keyframes pulseRed {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
     .navbar { display: none; }
-    .menu-icon { display: block; }
+    .menu-icon { display: block; color: var(--tp-text-main); }
+}
+
+/* =========================================
+   HEADER & NAVBAR (FIXED REVISION)
+   ========================================= */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.85); /* Efek Glassmorphism Putih */
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid var(--tp-border);
+    padding: 15px 0; /* Tinggi navbar yang pas */
+    transition: var(--tp-transition);
+}
+
+/* Biar pas scroll jadi lebih tipis (Optional: butuh sedikit JS) */
+.header.scrolled {
+    padding: 10px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Kunci biar semua konten rata tengah vertikal */
+}
+
+/* --- LOGO --- */
+.logo {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--tp-text-main);
+    letter-spacing: -0.5px;
+    display: flex;
+    align-items: center;
+}
+
+.logo span {
+    color: var(--tp-primary); /* Merah Jepang */
+}
+
+/* --- NAVBAR LINKS --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 32px; /* Jarak antar menu */
+}
+
+.nav-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--tp-text-muted);
+    position: relative;
+    padding: 5px 0;
+}
+
+.nav-link:hover, 
+.nav-link.active {
+    color: var(--tp-primary);
+}
+
+/* Efek garis bawah pas hover (ala Jepang yang detail) */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--tp-primary);
+    transition: var(--tp-transition);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
+}
+
+/* --- TOMBOL CTA --- */
+.btn-cta-nav {
+    padding: 12px 24px;
+    background: var(--tp-primary);
+    color: #fff !important;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    box-shadow: 0 8px 15px rgba(230, 57, 70, 0.15);
+    transition: var(--tp-transition);
+}
+
+.btn-cta-nav:hover {
+    background: var(--tp-primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(230, 57, 70, 0.25);
+}
+
+/* --- MOBILE MENU ICON --- */
+.menu-icon {
+    display: none; /* Sembunyi di desktop */
+    font-size: 28px;
+    color: var(--tp-text-main);
+    cursor: pointer;
+    transition: var(--tp-transition);
+}
+
+.menu-icon:hover {
+    color: var(--tp-primary);
+}
+
+/* =========================================
+   RESPONSIVE NAVBAR (MOBILE)
+   ========================================= */
+@media (max-width: 992px) {
+    .navbar {
+        display: none; /* Sembunyikan menu di tablet/HP dulu */
+    }
+    
+    .menu-icon {
+        display: block; /* Munculkan icon hamburger */
+    }
+
+    .header {
+        padding: 12px 0;
+    }
 }

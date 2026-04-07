@@ -1,0 +1,134 @@
+.tp-learning-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.learning-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* --- THE GRID --- */
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.learn-card {
+    background: #ffffff;
+    border: 1px solid var(--tp-border);
+    border-radius: 24px;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Featured (Learning Hub) - Stand out tapi tetep putih bersih */
+.learn-card.featured {
+    border-color: var(--tp-primary);
+    background-color: var(--tp-sakura-bg); /* Pink sangat muda #FFF5F7 */
+    box-shadow: 0 20px 40px rgba(230, 57, 70, 0.08);
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--tp-primary);
+    letter-spacing: 1px;
+}
+
+.learn-card h3 {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--tp-text-main); /* Hitam pekat */
+    margin-bottom: 12px;
+}
+
+.learn-card p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--tp-text-muted);
+    margin-bottom: 30px;
+    min-height: 45px;
+}
+
+.card-price {
+    font-size: 24px;
+    font-weight: 900;
+    color: var(--tp-primary);
+    margin-bottom: 30px;
+}
+
+.card-price.free {
+    font-size: 14px;
+    color: var(--tp-text-light);
+    letter-spacing: 1px;
+}
+
+/* --- BUTTONS --- */
+.btn-primary-jtc {
+    background: var(--tp-primary);
+    color: #ffffff;
+    text-align: center;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: 0.3s;
+}
+
+.btn-primary-jtc:hover {
+    background: var(--tp-text-main);
+    transform: translateY(-3px);
+}
+
+.btn-outline-jtc {
+    border: 2px solid var(--tp-text-main);
+    color: var(--tp-text-main);
+    text-align: center;
+    padding: 13px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-outline-jtc:hover {
+    background: var(--tp-text-main);
+    color: #fff;
+}
+
+/* Locked State */
+.learn-card.locked {
+    background: #f9fafb;
+    border-style: dashed;
+    opacity: 0.8;
+}
+
+.lock-icon { font-size: 24px; color: var(--tp-text-light); margin-bottom: 15px; }
+.status-badge {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--tp-text-light);
+    border: 1px solid var(--tp-border);
+    padding: 4px 12px;
+    border-radius: 50px;
+    align-self: flex-start;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .learning-grid { grid-template-columns: 1fr; }
+}
